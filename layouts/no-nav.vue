@@ -1,14 +1,17 @@
 <template>
-  <div>
-    <Nav />
+  <div class="container">
+    <Nuxt-link to="/">Go Back</Nuxt-link>
     <Nuxt />
   </div>
 </template>
 
 <style>
+.container {
+  padding: 5rem 0;
+}
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

@@ -3,9 +3,10 @@
     <div class="text-container">
       <h1 class="header">Find your Fire Extinguisher</h1>
       <p class="snippet">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde esse fuga
-        porro hic aut fugit voluptatibus modi at dolorem consequuntur dolor,
-        provident nemo fugiat eveniet. Facere iure tempore amet. Tempora.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis maxime
+        voluptas, ea, dolorum rerum quo culpa placeat ad architecto eligendi,
+        dolorem obcaecati vero quis eveniet earum quibusdam voluptates veniam
+        amet.
       </p>
       <button class="button btn">Start Looking</button>
     </div>
@@ -14,7 +15,14 @@
 </template>
 
 <script>
-export default {}
+import { defineComponent, useStore } from "@nuxtjs/composition-api";
+export default defineComponent({
+  setup() {
+    const { data1, data3 } = useStore().state;
+
+    return { data1, data3 };
+  }
+});
 </script>
 
 <style scoped>

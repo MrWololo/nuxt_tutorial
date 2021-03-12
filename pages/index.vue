@@ -1,28 +1,35 @@
 <template>
-  <div class="container">
-    <Hero />
-    <!-- <LargeCardDisplay
-      v-for="number in largeCardInfo"
-      :key="number"
-      :cardsSections="cardInfo"
-    /> -->
-    <p v-for="cardInfo in largeCardInfo" :key="cardInfo.id">{{ cardInfo }}</p>
+  <div>
+    <div class="container">
+      <Hero />
+      <DisplaysLargeCardDisplay
+        v-for="cardInfo in largeCardSections"
+        :key="`large${cardInfo.id}`"
+        :title="cardInfo.title"
+        :snippet="cardInfo.snippet"
+        :cards="cardInfo.cards"
+      />
+      <DisplaysSmallCardDisplay
+        v-for="cardInfo in smallCardSections"
+        :key="`small${cardInfo.id}`"
+        :title="cardInfo.title"
+        :cards="cardInfo.cards"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import { defineComponent } from "@nuxtjs/composition-api";
-import { largeCardSections } from "@/assets/data.js";
+import { largeCardSections, smallCardSections } from "@/assets/data.js";
 export default defineComponent({
   setup() {
-    let largeCardInfo = largeCardSections;
-
     return {
-      largeCardInfo
+      largeCardSections,
+      smallCardSections
     };
   }
 });
 </script>
 
-<style>
-</style>
+<style></style>
